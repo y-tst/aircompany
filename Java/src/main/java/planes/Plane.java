@@ -27,7 +27,7 @@ public abstract class Plane {
         return maxFlightDistance;
     }
 
-    public int getMinLoadCapacity() {
+    public int getMaxLoadCapacity() {
         return this.maxLoadCapacity;
     }
 

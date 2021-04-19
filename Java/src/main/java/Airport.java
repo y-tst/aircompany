@@ -28,9 +28,6 @@ public class Airport {
             if (plane instanceof MilitaryPlane) {
                 militaryPlanes.add((MilitaryPlane) plane);
             }
-            else {
-
-            }
         }
         return militaryPlanes;
     }
@@ -43,11 +40,6 @@ public class Airport {
                 planeWithMaxCapacity = passengerPlanes.get(i);
             }
         }
-
-
-
-
-
 
         return planeWithMaxCapacity;
     }
@@ -89,22 +81,17 @@ public class Airport {
 
     public Airport sortByMaxDistance() {
         Collections.sort(planes, new Comparator<Plane>() {
-            public int compare(Plane o1, Plane o2) {
-                return o1.getMaxFlightDistance() - o2.getMaxFlightDistance();
+            public int compare(Plane firstPlane, Plane secondPlane) {
+                return firstPlane.getMaxFlightDistance() - secondPlane.getMaxFlightDistance();
             }
         });
         return this;
     }
 
-
-    /**
-     * Sorts by max speed
-     * @return Airport
-     */
     public Airport sortByMaxSpeed() {
         Collections.sort(planes, new Comparator<Plane>() {
-            public int compare(Plane o1, Plane o2) {
-                return o1.getMS() - o2.getMS();
+            public int compare(Plane firstPlane, Plane secondPlane) {
+                return firstPlane.getMS() - secondPlane.getMS();
             }
         });
         return this;
@@ -112,8 +99,8 @@ public class Airport {
 
     public Airport sortByMaxLoadCapacity() {
         Collections.sort(planes, new Comparator<Plane>() {
-            public int compare(Plane o1, Plane o2) {
-                return o1.getMinLoadCapacity() - o2.getMinLoadCapacity();
+            public int compare(Plane firstName, Plane secondPlane) {
+                return firstName.getMaxLoadCapacity() - secondPlane.getMaxLoadCapacity();
             }
         });
         return this;
@@ -138,7 +125,6 @@ public class Airport {
                 '}';
     }
 
-    //Constructor
     public Airport(List<? extends Plane> planes) {
         this.planes = planes;
     }
