@@ -17,7 +17,6 @@ public class AirportTest {
     public void GetTransportMilitaryPlanes() {
         Airport airport = new Airport(PlanesList.planes);
         List<MilitaryPlane> transportMilitaryPlanes = airport.getTransportMilitaryPlanes();
-        boolean flag = false;
         for (MilitaryPlane militaryPlane : transportMilitaryPlanes) {
             Assert.assertTrue(militaryPlane.getType() == MilitaryType.TRANSPORT);
         }
