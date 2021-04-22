@@ -11,8 +11,6 @@ import java.util.List;
 
 public class AirportTest {
 
-    private static PassengerPlane planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
-
     @Test
     public void GetTransportMilitaryPlanes() {
         Airport airport = new Airport(PlanesList.planes);
@@ -26,7 +24,7 @@ public class AirportTest {
     public void GetPassengerPlaneWithMaxCapacity() {
         Airport airport = new Airport(PlanesList.planes);
         PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
-        Assert.assertEquals(expectedPlaneWithMaxPassengersCapacity, planeWithMaxPassengerCapacity);
+        Assert.assertEquals(expectedPlaneWithMaxPassengersCapacity, PlanesList.planeWithMaxPassengerCapacity);
     }
 
     @Test
