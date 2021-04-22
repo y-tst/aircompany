@@ -11,6 +11,7 @@ public class ExperimentalPlane extends Plane {
     public ExperimentalPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, ExperimentalTypes type, ClassificationLevel classificationLevel) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
         this.classificationLevel = classificationLevel;
+        this.type = type;
     }
 
     public ClassificationLevel getClassificationLevel() {
@@ -18,8 +19,8 @@ public class ExperimentalPlane extends Plane {
     }
 
     @Override
-    public boolean equals(Object isPane) {
-        return super.equals(isPane);
+    public boolean equals(Object isPlane) {
+        return super.equals(isPlane);
     }
 
     @Override
