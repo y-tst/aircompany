@@ -12,7 +12,7 @@ import java.util.List;
 public class AirportTest {
 
     @Test
-    public void GetTransportMilitaryPlanes() {
+    public void getTransportMilitaryPlanes() {
         Airport airport = new Airport(PlanesList.planes);
         List<MilitaryPlane> transportMilitaryPlanes = airport.getTransportMilitaryPlanes();
         for (MilitaryPlane militaryPlane : transportMilitaryPlanes) {
@@ -21,14 +21,14 @@ public class AirportTest {
     }
 
     @Test
-    public void GetPassengerPlaneWithMaxCapacity() {
+    public void getPassengerPlaneWithMaxCapacity() {
         Airport airport = new Airport(PlanesList.planes);
         PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
         Assert.assertEquals(expectedPlaneWithMaxPassengersCapacity, PlanesList.planeWithMaxPassengerCapacity);
     }
 
     @Test
-    public void SortingPlanesByMaxLoadCapacityIsCorrect() {
+    public void sortingPlanesByMaxLoadCapacityIsCorrect() {
         Airport airport = new Airport(PlanesList.planes);
         List<? extends Plane> planesSortedByMaxLoadCapacity = airport.sortByMaxLoadCapacity().getPlanes();
         for (int i = 0; i < planesSortedByMaxLoadCapacity.size() - 1; i++) {
@@ -37,7 +37,7 @@ public class AirportTest {
     }
 
     @Test
-    public void HasAtLeastOneBomberInMilitaryPlanes() {
+    public void hasAtLeastOneBomberInMilitaryPlanes() {
         Airport airport = new Airport(PlanesList.planes);
         List<MilitaryPlane> bomberMilitaryPlanes = airport.getBomberMilitaryPlanes();
         for (MilitaryPlane militaryPlane : bomberMilitaryPlanes) {
@@ -46,7 +46,7 @@ public class AirportTest {
     }
 
     @Test
-    public void ExperimentalPlanesHasClassificationLevelHigherThanUnclassified() {
+    public void experimentalPlanesHasClassificationLevelHigherThanUnclassified() {
         Airport airport = new Airport(PlanesList.planes);
         List<ExperimentalPlane> experimentalPlanes = airport.getExperimentalPlanes();
         for (ExperimentalPlane experimentalPlane : experimentalPlanes) {

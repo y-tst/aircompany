@@ -17,17 +17,21 @@ public class PassengerPlane extends Plane {
 
     @Override
     public String toString() {
-        return super.toString().replace("}",
-                ", passengersCapacity=" + passengersCapacity +
-                        '}');
+        return super.toString().replace("}",", passengersCapacity=" + passengersCapacity + '}');
     }
 
     @Override
-    public boolean equals(Object isPassangerPlane) {
-        if (this == isPassangerPlane) return true;
-        if (!(isPassangerPlane instanceof PassengerPlane)) return false;
-        if (!super.equals(isPassangerPlane)) return false;
-        PassengerPlane plane = (PassengerPlane) isPassangerPlane;
+    public boolean equals(Object isPassengerPlane) {
+        if (this == isPassengerPlane) {
+            return true;
+        }
+        if (!(isPassengerPlane instanceof PassengerPlane)) {
+            return false;
+        }
+        if (!super.equals(isPassengerPlane)) {
+            return false;
+        }
+        PassengerPlane plane = (PassengerPlane) isPassengerPlane;
         return passengersCapacity == plane.passengersCapacity;
     }
 

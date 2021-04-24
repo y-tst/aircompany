@@ -10,14 +10,15 @@ public class Airport {
     private List<? extends Plane> planes;
 
     public List<PassengerPlane> getPassengerPlane() {
-        List<? extends Plane> l = this.planes;
-        List<PassengerPlane> x = new ArrayList<>();
-        for (Plane p : l) {
-            if (p instanceof PassengerPlane) {
-                x.add((PassengerPlane) p);
+        List<? extends Plane> planes = this.planes;
+        List<PassengerPlane> passengerPlanes = new ArrayList<>();
+        for (Plane plane : planes) {
+            if (plane instanceof PassengerPlane) {
+                passengerPlanes.add((PassengerPlane) plane);
             }
         }
-        return x;
+
+        return passengerPlanes;
     }
 
     public List<MilitaryPlane> getMilitaryPlanes() {
@@ -27,6 +28,7 @@ public class Airport {
                 militaryPlanes.add((MilitaryPlane) plane);
             }
         }
+
         return militaryPlanes;
     }
 
@@ -51,6 +53,7 @@ public class Airport {
                 transportMilitaryPlanes.add(plane);
             }
         }
+
         return transportMilitaryPlanes;
     }
 
@@ -63,8 +66,8 @@ public class Airport {
                 bomberMilitaryPlanes.add(plane);
             }
         }
-        return bomberMilitaryPlanes;
 
+        return bomberMilitaryPlanes;
     }
 
     public List<ExperimentalPlane> getExperimentalPlanes() {
@@ -74,6 +77,7 @@ public class Airport {
                 experimentalPlanes.add((ExperimentalPlane) plane);
             }
         }
+
         return experimentalPlanes;
     }
 
@@ -83,6 +87,7 @@ public class Airport {
                 return firstPlane.getMaxFlightDistance() - secondPlane.getMaxFlightDistance();
             }
         });
+
         return this;
     }
 
@@ -92,6 +97,7 @@ public class Airport {
                 return firstPlane.getMaxSpeed() - secondPlane.getMaxSpeed();
             }
         });
+
         return this;
     }
 
@@ -101,6 +107,7 @@ public class Airport {
                 return firstName.getMaxLoadCapacity() - secondPlane.getMaxLoadCapacity();
             }
         });
+
         return this;
     }
 
@@ -110,13 +117,10 @@ public class Airport {
 
     @Override
     public String toString() {
-        return "Airport{" +
-                "Planes=" + planes.toString() +
-                '}';
+        return "Airport{" + "Planes=" + planes.toString() + '}';
     }
 
     public Airport(List<? extends Plane> planes) {
         this.planes = planes;
     }
-
 }
